@@ -1,0 +1,80 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+@inject Microsoft.Extensions.Configuration.IConfiguration Configuration
+
+<div class="text-center">
+    <h1 class="display-4">@TempData["Saudacao"]</h1>
+    <h3>Aprenda mais sobre DevOps com o Azure na Prática!!!</h3>
+
+    <table class="table table-hover" style="text-align: left;">
+        <thead class="bg-primary text-white">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Local</th>
+                <th scope="col">Link</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>Formação DevOps (Azure DevOps + GitHub Actions)</td>
+                <td>
+                    <a href="@(Configuration["ANP:Formacao"])" target="_blank">
+                        @Configuration["ANP:Formacao"]
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Telegram</td>
+                <td>
+                    <a href="@(Configuration["ANP:Telegram"])" target="_blank">
+                        @Configuration["ANP:Telegram"]
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>LinkedIn</td>
+                <td>
+                    <a href="@(Configuration["ANP:LinkedIn"])" target="_blank">
+                        @Configuration["ANP:LinkedIn"]
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">4</th>
+                <td>GitHub</td>
+                <td>
+                    <a href="@(Configuration["ANP:GitHub"])" target="_blank">
+                        @Configuration["ANP:GitHub"]
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">5</th>
+                <td>Instagram</td>
+                <td>
+                    <a href="@(Configuration["ANP:Instagram"])" target="_blank">
+                        @Configuration["ANP:Instagram"]
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">6</th>
+                <td>YouTube</td>
+                <td>
+                    <a href="@(Configuration["ANP:YouTube"])" target="_blank">
+                        @Configuration["ANP:YouTube"]
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>@($"{DateTime.UtcNow.AddHours(-3):dd/MM/yyyy HH:mm:ss.ffff}")</p>
+</div>
